@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import styled from 'styled-components'
-import { colors } from '../../styles/colors'
 import { useNavContext } from '../../utils/hooks/useNavContext'
 import { HeaderButton } from '../HeaderButton/HeaderButton'
 import { HeaderLink } from '../StyledLink/styledLink'
@@ -36,10 +35,6 @@ const NavList = styled.div`
 
 export const ResponsiveHeader = () => {
   const openMenu = useNavContext().openMenu
-  const currentPath = useNavContext().currentPath
-  const NavContext = useNavContext()
-
-  const link = document.querySelectorAll('header nav a')
 
   useEffect(() => {
     console.log("header")

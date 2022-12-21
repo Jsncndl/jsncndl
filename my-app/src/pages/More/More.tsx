@@ -1,10 +1,6 @@
 import styled from 'styled-components'
 import { FadeInX } from '../../styles/animations/animations'
 
-const StyledSection = styled.section`
-  animation: ${FadeInX} 1s ease-in;
-`
-
 export const More = () => {
   return (
     <span>

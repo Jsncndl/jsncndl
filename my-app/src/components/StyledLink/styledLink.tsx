@@ -1,7 +1,5 @@
 import { HTMLAttributes, useEffect, useState } from 'react'
-import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
-import { AnimHeaderLink } from '../../styles/animations/animations'
 import { colors } from '../../styles/colors'
 import { useNavContext } from '../../utils/hooks/useNavContext'
 import "./styledLink.css"
