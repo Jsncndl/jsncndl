@@ -37,7 +37,6 @@ export const ResponsiveHeader = () => {
   const openMenu = useNavContext().openMenu
 
   useEffect(() => {
-    console.log("header")
     if (openMenu) {
       document.getElementById('header')?.classList.add('activeNavlist')
       document.getElementById('header')?.classList.remove('hiddenNavlist')

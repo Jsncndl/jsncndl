@@ -47,7 +47,6 @@ export const HeaderLink = ({ ...props }: HeaderLinkProps) => {
   const [isActive, setIsActive] = useState(false)
 
   useEffect(() => {
-    console.log("styledlink")
     if (props.name.includes(NavContext.currentPath)) {
       setIsActive(true)
     } else {
