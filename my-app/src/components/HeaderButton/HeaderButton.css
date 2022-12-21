@@ -1,0 +1,12 @@
+.activeTopBar {
+  transform-origin: right;
+  transform: rotate(45deg) scale(1.3);
+}
+
+.activeMiddleBar {
+  display: none;
+}
+
+.activeBottomBar {
+  transform: rotate(-45deg) scale(1.3);
+}
