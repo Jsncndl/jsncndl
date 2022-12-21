@@ -36,3 +36,18 @@
     transform: rotate(360deg);
   }
 }
+
+@keyframes slidein {
+  0% {
+  opacity: 5%;
+  scale: 0;
+  }
+  100% {
+  opacity: 100%;
+  scale: 1;
+  }
+}
+
+.inview {
+  animation: slidein 1.5s;
+}
