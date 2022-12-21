@@ -1,14 +1,8 @@
-import { Route } from 'react-router'
-import { BrowserRouter, Routes } from 'react-router-dom'
-import styled from 'styled-components'
 import './App.css'
-import { Header } from './components/Header/header'
 import { ResponsiveHeader } from './components/Header/responsiveHeader'
 import { Home } from './pages/Home/Home'
 import { More } from './pages/More/More'
-import { colors } from './styles/colors'
 import { StyledSection, Main } from './styles/globalStyle'
-import { NavContext } from './utils/context/NavContext'
 import { useNavContext } from './utils/hooks/useNavContext'
 
 function App() {
@@ -31,7 +25,6 @@ function App() {
         window.scroll({ top: offsetTop, behavior: 'smooth' })
         
         setTimeout(() => {
-          console.log("euh")
           window.location.assign(window.location.origin + '/#' + target.id)
           const linkId = document.getElementById(`${target.id}-link`)
           setCurrentPath(target.id)
@@ -44,7 +37,6 @@ function App() {
 
   const observer = new IntersectionObserver(callback, options)
   sections.forEach((section, index) => {
-    console.log("observer")
     observer.observe(section)
   })
   ///
