@@ -26,9 +26,9 @@ function App() {
         window.scroll({ top: offsetTop, behavior: 'smooth' })
 
         setTimeout(() => {
-          /* Timeout of 300ms to avoid freezing when scrolling to top */
+          /* Timeout of 500ms to avoid freezing when scrolling to top */
           target.id && setCurrentPath(target.id)
-        }, 300)
+        }, 500)
       } else {
         target.firstChild.classList.remove('inview')
         target.firstChild.classList.add('hidden')
