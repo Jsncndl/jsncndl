@@ -15,16 +15,16 @@ export const NavProvider = (props: any) => {
   const [firstLoad, setFirstLoad] = useState(true)
 
   useEffect(() => {
-    if (firstLoad){
-    const pathname = window.location.href.slice(window.location.href.search('#') + 1)
-    setCurrentPath(pathname)
-    setFirstLoad(false)
-  }
+    if (firstLoad) {
+      setCurrentPath(currentPath)
+      setFirstLoad(false)
+    }
   })
 
   const toggleCurrentPath = (path: string) => {
-    const pathName = path.slice(0, path.search('-'))
-    setCurrentPath(pathName)
+    /* const pathName = path.slice(0, path.search('-'))
+    setCurrentPath(pathName) */
+    setCurrentPath(path)
   }
 
   const toggleOpenMenu = () => {
