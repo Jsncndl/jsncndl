@@ -1,8 +1,9 @@
 import { HTMLAttributes, useEffect, useState } from 'react'
 import styled from 'styled-components'
+import { useScrollTo } from '../../utils/hooks/useScrollTo'
 import { colors } from '../../styles/colors'
 import { useNavContext } from '../../utils/hooks/useNavContext'
-import "./styledLink.css"
+import './styledLink.css'
 
 export interface HeaderLinkProps extends HTMLAttributes<HTMLLinkElement> {
   name: 'home-link' | 'more-link' | 'sites-link' | 'contact-link'
@@ -56,13 +57,14 @@ export const HeaderLink = ({ ...props }: HeaderLinkProps) => {
 
   return (
     <StyledLink
-      href={`#${props.name.slice(0, props.name.search("-"))}`}
+      /* href={`#${props.name.slice(0, props.name.search("-"))}`} */
       name={props.name}
       id={props.id}
       onClick={(event: any) => {
-        setIsActive(true);
-        NavContext.setCurrentPath(event.target.name);
-        setTimeout(() => NavContext.setOpenMenu(), 700)
+        useScrollTo(event)
+        setIsActive(true)
+        NavContext.setCurrentPath(event.target.name)
+        setTimeout(() => NavContext.setOpenMenu(), 500)
       }}
       $isActive={isActive}
       $animDelay={props.$animDelay}>
