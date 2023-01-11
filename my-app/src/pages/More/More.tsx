@@ -1,10 +1,12 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { colors } from '../../styles/colors'
 import image from '../../images/portfolio.webp'
 import { Card, CardExp } from '../../components/Card/card'
 import { useEffect, useRef, useState } from 'react'
 import { CardExpList } from '../../components/CardExpList/CardExpList'
-
+import { CardCpt } from '../../components/CardCpt/CardCpt'
+import htmlIcon from '../../images/icon-html.svg'
+import { CardCptList } from '../../components/CardCptList/CardCptList'
 
 const StyledBackground = styled.div`
   width: 100vw;
@@ -51,6 +53,7 @@ const StyledSubMenu = styled.ul`
 `
 
 const StyledItemList = styled.li<{ active?: boolean }>`
+  cursor: pointer;
   text-align: center;
   width: 115px;
   transition: all 1s ease;
@@ -63,8 +66,15 @@ const StyledItemList = styled.li<{ active?: boolean }>`
     width: 70px;
     height: 1.5px;
     background: #ffffff;
-    transition: transform 0.4s ease-in-out;
-    transform: ${(props) => (props.active ? 'scale(1)' : 'scale(0)')};
+    transition: all 0.4s ease-in-out;
+    transform: scale(0);
+
+    ${(props) =>
+      props.active &&
+      css`
+        transform: scale(1);
+        cursor: unset;
+      `}
   }
 `
 const cardValue1 = {
@@ -113,7 +123,7 @@ export const More = () => {
 
   const [activeIndex, setActiveIndex] = useState<null | number>()
 
-   useEffect(() => {
+  useEffect(() => {
     if (activeIndex) {
       setActiveIndex(activeIndex)
     }
@@ -167,9 +177,9 @@ export const More = () => {
                 <CardExpList />
               </>
             ) : categorie === 'competences' ? (
-              <p>competence</p>
+              <CardCptList />
             ) : (
-              <div>error</div>
+              <div>Une erreur est survenue ...</div>
             )}
           </StyledSubMenu>
         </StyledBackground>
