@@ -158,6 +158,7 @@ const StyledCarpExpButton = styled.button`
   height: 37px;
   width: 40px;
   padding: 0;
+  cursor: pointer;
 `
 
 export const CardExp = (props: CardProps) => {

@@ -19,7 +19,7 @@ export const BaseAnimation = styled.div<PropsBaseAnimation>`
 const FadeInXAnimation = keyframes`
   from {
     transform: translateX(-100vh);
-    opacity: 5%;
+    opacity: 0%;
     scale: 0.8;
   }
   65% {
