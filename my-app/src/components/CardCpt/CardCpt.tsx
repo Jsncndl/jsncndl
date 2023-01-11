@@ -1,5 +1,5 @@
 import styled, { keyframes } from 'styled-components'
-import { FadeInX } from '../../styles/animations/animations'
+import { FadeInX, FadeInBottomTopYAnimation, FadeInRightLeftXAnimation } from '../../styles/animations/animations'
 
 export interface CardCptProps {
   title: string
@@ -27,7 +27,7 @@ const StyledContainer = styled.li<{ indexDelay?: number | null }>`
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation-name: ${animation};
+  animation-name: ${FadeInRightLeftXAnimation};
   animation-iteration-count: 1;
   animation-fill-mode: both;
   animation-duration: 400ms;

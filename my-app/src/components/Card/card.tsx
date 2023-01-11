@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { colors } from '../../styles/colors'
 import '../Card/card.css'
 import { mediaQueries } from '../../styles/mediaQueries'
+import { FadeInBottomTopYAnimation, FadeInLeftRightXAnimation } from '../../styles/animations/animations'
 
 interface CardProps {
   title?: string
@@ -21,9 +22,10 @@ interface CardProps {
   }
   toggleExpansion?: (event: any) => void
   isActive?: boolean
+  indexDelay?: number
 }
 
-const StyledCard = styled.div`
+const StyledCard = styled.div<{indexDelay?: number}>`
   background-color: ${colors.second};
   width: 90%;
   max-height: 440px;
@@ -32,6 +34,14 @@ const StyledCard = styled.div`
   margin: 15px 0 0 0;
   padding: 7px;
   border-radius: 10px;
+  animation-name: ${FadeInLeftRightXAnimation};
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  animation-duration: 400ms;
+  animation-delay: ${(props) =>
+    props.indexDelay !== undefined && props.indexDelay !== null && props.indexDelay !== 0
+      ? 300 + 100 * props.indexDelay
+      : 300}ms;
 `
 const StyledHeader = styled.div`
   width: 100%;
@@ -79,7 +89,7 @@ export const Card = (props: CardProps) => {
   }
 
   return (
-    <StyledCard>
+    <StyledCard indexDelay={props.indexDelay}>
       <StyledHeader>
         <StyledTitle>{props.title}</StyledTitle>
         <StyledHeaderInfo>
@@ -130,7 +140,7 @@ export const Card = (props: CardProps) => {
   )
 }
 
-const StyledCardExp = styled.div`
+const StyledCardExp = styled.div<{indexDelay?: number}>`
   background-color: ${colors.second};
   width: 90%;
   max-height: 250px;
@@ -139,6 +149,14 @@ const StyledCardExp = styled.div`
   margin: 15px 0 0 0;
   padding: 7px;
   border-radius: 10px;
+  animation-name: ${FadeInBottomTopYAnimation};
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+  animation-duration: 400ms;
+  animation-delay: ${(props) =>
+    props.indexDelay !== undefined && props.indexDelay !== null && props.indexDelay !== 0
+      ? 300 + 100 * props.indexDelay
+      : 300}ms;
 `
 const StyledCardExpHeader = styled.div`
   display: flex;
@@ -165,7 +183,7 @@ export const CardExp = (props: CardProps) => {
   const myRef = useRef<null | HTMLDivElement>(null)
 
   return (
-    <StyledCardExp className='expCard'>
+    <StyledCardExp className='expCard' indexDelay={props.indexDelay}>
       <StyledCardExpHeader>
         <StyledCardExpTitle>{props.title}</StyledCardExpTitle>
         {props.isActive ? (

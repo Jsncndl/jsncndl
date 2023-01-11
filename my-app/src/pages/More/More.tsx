@@ -167,8 +167,8 @@ export const More = () => {
           <StyledSubMenu>
             {categorie === 'formations' ? (
               <>
-                <Card {...cardValue1} />
-                <Card
+                <Card {...cardValue1} indexDelay={0} />
+                <Card indexDelay={1}
                   {...{ title: 'BAC STI2D spé. SIN', date: '2016', place: 'Haute-Savoie, 74' }}
                 />
               </>

@@ -75,6 +75,7 @@ export const CardExpList = () => {
             description={card.description}
             toggleExpansion={(event: any) => toggleExpansion(event, index)}
             isActive={activeCard === index}
+            indexDelay={index}
           />
         )
       })}
