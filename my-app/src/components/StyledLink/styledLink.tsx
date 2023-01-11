@@ -57,7 +57,6 @@ export const HeaderLink = ({ ...props }: HeaderLinkProps) => {
 
   return (
     <StyledLink
-      /* href={`#${props.name.slice(0, props.name.search("-"))}`} */
       name={props.name}
       id={props.id}
       onClick={(event: any) => {

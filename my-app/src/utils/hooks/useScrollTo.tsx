@@ -9,11 +9,6 @@ export const useScrollTo = (event: any) => {
       The first scroll doesn't have delay, but for all next add 550ms each time to avoid scroll freezing on unwanted section
     */
 
-  /* 
-      TO EDIT
-      create ref with useRef to use scrollIntoView and avoid Intersection freezing
-      */
-
   const targetId = event.target.id.slice(0, event.target.id.search('-'))
   const target = document.getElementById(targetId)
   const rect = target?.getBoundingClientRect()

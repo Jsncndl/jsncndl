@@ -1,4 +1,3 @@
-import { useRef } from 'react'
 import './App.css'
 import { ResponsiveHeader } from './components/Header/responsiveHeader'
 import { Home } from './pages/Home/Home'
@@ -14,8 +13,6 @@ function App() {
     rootMargin: '0px',
     threshold: 0.25,
   }
-  // homePage?.addEventListener('mouseover', (event: any) => console.log(event))
-  // morePage?.addEventListener('mouseover', (event: any) => setTimeout(() => console.log(document.getElementById("home-link"))))
   const callback = (entries: any) => {
     entries.forEach(async (entry: any) => {
       const target = entry.target
@@ -58,15 +55,6 @@ function App() {
         <span>Derniere div</span>
       </StyledSection>
     </Main>
-    /*     <BrowserRouter>
-      <Routes>
-        <Route path="*" element={<Home />} />
-        <Route path="/home" element={<Home />} />
-        <Route path='more' element={<More />} />
-        <Route path='sites' />
-        <Route path='contact' />
-      </Routes>
-    </BrowserRouter> */
   )
 }
 
