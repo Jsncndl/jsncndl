@@ -91,42 +91,29 @@ const FullSizeImage = styled.img`
 `
 const animatedFigcaption = keyframes`
   0% {
-    translate: 0 -5px;
+    translate: 0 0;
   }
-  20% {
-    translate: 0 15px;
-  }
-  80% {
-    translate: 0 15px;
-  }
-  100% {
-    translate: 0 -5px;
-  }
-`
-const inViewFigcaption = keyframes`
   50% {
-    translate: 0 -50px;
-    height: 22px;
+    translate: 0 -25px;
   }
   100% {
-    translate: 0 -50px;
-    height: 100px;
+    translate: 0 0;
   }
 `
 
 const StyledFigcaption = styled.figcaption<{ active?: boolean }>`
   background-color: ${colors.third};
-  height: 22px;
+  max-height: 20px;
   overflow: hidden;
   border-radius: 15px;
   border: 0;
-  padding: 12px 7px 5px 7px;
+  padding: 7px;
   animation: ${animatedFigcaption} 3s ease-in-out infinite;
   transition: all 1s ease-in-out;
   z-index: 3;
   position: relative;
 
-  ${(props) => props.active && css`animation: ${inViewFigcaption} 1s ease-in-out forwards;`}
+  ${(props) => props.active && "transform: translateY(-50px); max-height: 100px; animation: none;"}
 `
 
 export const CardSites = ({ image, title, project, description, link, index }: CardSitesProps) => {
