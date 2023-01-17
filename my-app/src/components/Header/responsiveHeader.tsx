@@ -7,7 +7,7 @@ import './responsiveHeader.css'
 
 const StyledHeader = styled.header`
   position: fixed;
-  z-index: 99999;
+  z-index: 99;
   background-color: transparent;
   backdrop-filter: blur(2px);
   display: flex;

@@ -2,6 +2,7 @@ import './App.css'
 import { ResponsiveHeader } from './components/Header/responsiveHeader'
 import { Home } from './pages/Home/Home'
 import { More } from './pages/More/More'
+import { Sites } from './pages/Sites/Sites'
 import { StyledSection, Main } from './styles/globalStyle'
 import { useNavContext } from './utils/hooks/useNavContext'
 
@@ -49,7 +50,7 @@ function App() {
         <More />
       </StyledSection>
       <StyledSection id='sites'>
-        <span>RéALISATIONS</span>
+        <Sites />
       </StyledSection>
       <StyledSection id='contact'>
         <span>Derniere div</span>

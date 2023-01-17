@@ -62,7 +62,7 @@ const StyledTitle = styled.h2`
 `
 const StyledDescription = styled.div`
   overflow: scroll;
-  overscroll-behavior: contain;
+  overscroll-behavior: none;
   height: 100%;
   width: 100%;
 `

@@ -9,7 +9,7 @@ import htmlIcon from '../../images/icon-html.svg'
 import { CardCptList } from '../../components/CardCptList/CardCptList'
 
 const StyledBackground = styled.div`
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   position: absolute;
   top: 180px;
