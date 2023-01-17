@@ -121,17 +121,14 @@ export const CardSites = ({ image, title, project, description, link, index }: C
   const [isDescActive, setIsDescActive] = useState(false)
 
   useEffect(() => {
-    console.log(isDescActive)
     fullSize ? (document.body.style.overflow = 'hidden') : (document.body.style.overflow = '')
   }, [fullSize])
 
   const imageClick = () => {
     fullSize ? setFullSize(false) : setFullSize(true)
-    console.log('click', fullSize)
   }
 
   const descClick = (event: any) => {
-    console.log(event)
     isDescActive ? setIsDescActive(false) : setIsDescActive(true)
   }
 
