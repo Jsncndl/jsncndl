@@ -1,5 +1,6 @@
 import './App.css'
 import { ResponsiveHeader } from './components/Header/responsiveHeader'
+import { Contact } from './pages/Contact/Contact'
 import { Home } from './pages/Home/Home'
 import { More } from './pages/More/More'
 import { Sites } from './pages/Sites/Sites'
@@ -53,7 +54,7 @@ function App() {
         <Sites />
       </StyledSection>
       <StyledSection id='contact'>
-        <span>Derniere div</span>
+        <Contact />
       </StyledSection>
     </Main>
   )
