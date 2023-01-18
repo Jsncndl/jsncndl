@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { colors } from '../../styles/colors'
+import mail from '../../images/svg/mail.svg'
 
 const StyledForm = styled.form`
   display: flex;
@@ -34,6 +35,12 @@ const StyledButton = styled.input`
   box-shadow: 0 0 5px ${colors.white};
 `
 
+const SVGContainer = styled.div`
+  height: 30px;
+  width: 30px;
+  background: url(${mail});
+`
+
 export const Contact = () => {
   return (
     <span
@@ -64,6 +71,7 @@ export const Contact = () => {
         </StyledLabel>
         <StyledButton type='submit' value='Envoyer' />
       </StyledForm>
+      <SVGContainer />
     </span>
   )
 }
