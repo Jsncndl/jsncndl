@@ -43,10 +43,8 @@ const StyledIcon = styled.img`
 export const CardCpt = ({ title, icon, indexDelay }: CardCptProps) => {
   return (
     <StyledContainer indexDelay={indexDelay}>
-      <FadeInX>
         <StyledIcon src={icon} alt={'Logo de ' + title} />
         <p>{title}</p>
-      </FadeInX>
     </StyledContainer>
   )
 }
