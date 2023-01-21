@@ -1,8 +1,12 @@
 import styled from 'styled-components'
 import { colors } from '../../styles/colors'
-import mail from '../../images/svg/mail.svg'
 import emailjs from '@emailjs/browser'
 import { useEffect, useRef, useState } from 'react'
+
+import mail from '../../images/svg/mail.svg'
+import github from '../../images/svg/github.svg'
+import linkedin from '../../images/svg/linkedin.svg'
+import phone from '../../images/svg/phone.svg'
 
 interface FormUserEmail {
   user_email: string
@@ -58,12 +62,45 @@ const StyledButton = styled.input`
   background-color: ${colors.third};
   color: ${colors.white};
   box-shadow: 0 0 5px ${colors.white};
+  margin: 0 0 10px;
 `
-
-const SVGContainer = styled.div`
+const ContactContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  gap: 10px;
+  background-color: ${colors.first};
+`
+const SVGMailContainer = styled.div`
   height: 30px;
   width: 30px;
   background: url(${mail});
+`
+const SVGGithubContainer = styled.div`
+  height: 30px;
+  width: 30px;
+  background: url(${github});
+`
+const SVGLinkedinContainer = styled.div`
+  height: 30px;
+  width: 30px;
+  background: url(${linkedin});
+`
+const SVGPhoneContainer = styled.div`
+  height: 30px;
+  width: 30px;
+  background: url(${phone});
+`
+const ContactItem = styled.div`
+  display: flex;
+  align-items: center;
+`
+const ContactLink = styled.a`
+  color: ${colors.white};
+  text-decoration: none;
+  padding: 0 0 0 10px;
 `
 
 export const Contact = () => {
@@ -150,7 +187,31 @@ export const Contact = () => {
         />
         <StyledButton type='submit' value='Envoyer' />
       </StyledForm>
-      <SVGContainer />
+      <ContactContainer>
+        <ContactItem>
+          <SVGMailContainer />
+          <ContactLink href='mailto:candel.josian@gmail.com'>candel.josian@gmail.com</ContactLink>
+        </ContactItem>
+        <ContactItem>
+          <SVGGithubContainer />
+          <ContactLink target='_blank' rel='noreferrer noopener' href='https://github.com/Jsncndl'>
+            Jsncndl
+          </ContactLink>
+        </ContactItem>
+        <ContactItem>
+          <SVGLinkedinContainer />
+          <ContactLink
+            target='_blank'
+            rel='noreferrer noopener'
+            href='https://www.linkedin.com/in/josian-candel/'>
+            Josian Candel
+          </ContactLink>
+        </ContactItem>
+        <ContactItem>
+          <SVGPhoneContainer />
+          <ContactLink href='tel:+3313932115'>+33 6 13 93 21 15</ContactLink>
+        </ContactItem>
+      </ContactContainer>
     </span>
   )
 }
