@@ -12,7 +12,9 @@ export const useScrollTo = (event: any) => {
   const targetId = event.target.id.slice(0, event.target.id.search('-'))
   const target = document.getElementById(targetId)
   const rect = target?.getBoundingClientRect()
-  if (
+  
+  target?.scrollIntoView({ block: 'start'})
+/*   if (
     targetId === 'home' ||
     targetId === 'more' ||
     targetId === 'sites' ||
@@ -43,4 +45,4 @@ export const useScrollTo = (event: any) => {
       }
     }, 1500)
   }
-}
+ */}
