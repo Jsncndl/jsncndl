@@ -51,6 +51,25 @@ const StyledSubMenu = styled.ul`
   justify-content: space-around;
   overflow: hidden;
 `
+const CardContainer = styled.div`
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  overflow: hidden;
+`
+const CardList = styled.ul`
+list-style-type: none;
+padding: 0;
+margin: 0;
+display: flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: space-around;
+overflow: hidden;
+`
 
 const StyledItemList = styled.li<{ active?: boolean }>`
   cursor: pointer;
@@ -164,24 +183,25 @@ export const More = () => {
               </StyledItemList>
             )}
           </StyledSubMenu>
-          <StyledSubMenu>
+          <CardContainer>
             {categorie === 'formations' ? (
-              <>
+              <CardList>
                 <Card {...cardValue1} indexDelay={0} />
-                <Card indexDelay={1}
+                <Card
+                  indexDelay={1}
                   {...{ title: 'BAC STI2D spé. SIN', date: '2016', place: 'Haute-Savoie, 74' }}
                 />
-              </>
+              </CardList>
             ) : categorie === 'experiences' ? (
-              <>
+              <CardList>
                 <CardExpList />
-              </>
+              </CardList>
             ) : categorie === 'competences' ? (
               <CardCptList />
             ) : (
               <div>Une erreur est survenue ...</div>
             )}
-          </StyledSubMenu>
+          </CardContainer>
         </StyledBackground>
       </StyledContainer>
     </span>

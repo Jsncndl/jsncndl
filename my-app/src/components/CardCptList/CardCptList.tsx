@@ -20,8 +20,9 @@ const competences: CardCptProps[] = [
   { title: 'Node.JS', icon: nodeIcon },
 ]
 
-const StyledContainer = styled.div`
+const StyledContainer = styled.ul`
   list-style-type: none;
+  margin: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;

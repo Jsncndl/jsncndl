@@ -1,8 +1,7 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef } from 'react'
 import styled from 'styled-components'
 import { colors } from '../../styles/colors'
 import '../Card/card.css'
-import { mediaQueries } from '../../styles/mediaQueries'
 import { FadeInBottomTopYAnimation, FadeInLeftRightXAnimation } from '../../styles/animations/animations'
 
 interface CardProps {
@@ -25,7 +24,7 @@ interface CardProps {
   indexDelay?: number
 }
 
-const StyledCard = styled.div<{indexDelay?: number}>`
+const StyledCard = styled.li<{indexDelay?: number}>`
   background-color: ${colors.second};
   width: 90%;
   max-height: 440px;
@@ -82,11 +81,6 @@ const StyledListItem = styled.li`
   padding: 0 0 0 15px;
 `
 export const Card = (props: CardProps) => {
-  const DispatchItemList = (itemList: string[]) => {
-    itemList.map((item: string, index: number) => {
-      return <StyledListItem key={index}>{item}</StyledListItem>
-    })
-  }
 
   return (
     <StyledCard indexDelay={props.indexDelay}>
@@ -140,7 +134,7 @@ export const Card = (props: CardProps) => {
   )
 }
 
-const StyledCardExp = styled.div<{indexDelay?: number}>`
+const StyledCardExp = styled.li<{indexDelay?: number}>`
   background-color: ${colors.second};
   width: 90%;
   max-height: 250px;
