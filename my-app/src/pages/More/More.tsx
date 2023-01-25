@@ -23,6 +23,7 @@ const StyledBackground = styled.div`
 const StyledContainer = styled.span`
   display: flex;
   flex-direction: column;
+  transition: all 500ms ease-in-out;
 `
 const StyledImageContainer = styled.span`
   background-image: url('${image}');
@@ -61,14 +62,14 @@ const CardContainer = styled.div`
   overflow: hidden;
 `
 const CardList = styled.ul`
-list-style-type: none;
-padding: 0;
-margin: 0;
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-justify-content: space-around;
-overflow: hidden;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  overflow: hidden;
 `
 
 const StyledItemList = styled.li<{ active?: boolean }>`
@@ -133,27 +134,27 @@ export const More = () => {
   const toggleCategorie = (event: any) => {
     const categorie = event.target.id.slice(4)
     console.log(event.target.offsetTop)
-    if (myRef.current) {
+    /*     if (myRef.current) {
       myRef.current.scrollIntoView({ block: 'start', behavior: 'smooth' })
-      myRef.current.scrollBy({ top: 150 })
-    }
+      myRef.current.scrollBy({ top: 50 })
+    } */
+    const expCard = document.getElementById('exp-card')
+    if (expCard) expCard.style.transform = 'translate(0, -215px)'
     setCategorie(categorie)
   }
-
-  const [activeIndex, setActiveIndex] = useState<null | number>()
-
-  useEffect(() => {
-    if (activeIndex) {
-      setActiveIndex(activeIndex)
+  const toggleNameClick = (event: any) => {
+    const expCard = document.getElementById('exp-card')
+    if (expCard) {
+      expCard.style.transform = ''
     }
-  }, [activeIndex])
+  }
 
   return (
     <span style={{ width: '100%', position: 'absolute', right: 0 }}>
-      <StyledContainer className='exp-card'>
+      <StyledContainer className='exp-card' id='exp-card'>
         <StyledImageContainer />
         <StyledBackground ref={myRef}>
-          <StyledName>Josian Candel</StyledName>
+          <StyledName onClick={toggleNameClick}>Josian Candel</StyledName>
           <StyledSubMenu>
             {categorie === 'formations' ? (
               <StyledItemList active id='cat-formations' onClick={toggleCategorie}>
