@@ -6,7 +6,6 @@ import { More } from './pages/More/More'
 import { Sites } from './pages/Sites/Sites'
 import { StyledSection, Main } from './styles/globalStyle'
 import { useNavContext } from './utils/hooks/useNavContext'
-import backgroundWave from './images/svg/wave.svg'
 
 function App() {
   const setCurrentPath = useNavContext().setCurrentPath
@@ -37,7 +36,7 @@ function App() {
   }
 
   const observer = new IntersectionObserver(callback, options)
-  sections.forEach((section, index) => {
+  sections.forEach((section) => {
     observer.observe(section)
   })
   ///
